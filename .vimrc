@@ -7,15 +7,17 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'jiangmiao/auto-pairs'
 
 " let Vundle manage Vundle, required
+
 Bundle 'gmarik/vundle'
 
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
+
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'jiangmiao/auto-pairs'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
