@@ -15,6 +15,7 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-pathogen'
 
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/emmet-vim'
@@ -69,6 +70,23 @@ let g:ycm_confirm_extra_conf = 0
 let g:user_emmet_install_global = 0
 autocmd FileType html*,css* EmmetInstall
 let g:user_emmet_leader_key='<C-Z>'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" Syntastic confs
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['flake8']
+execute pathogen#infect()
 
 " Shortcuts
 silent! nmap <F2> :NERDTreeToggle<CR>
