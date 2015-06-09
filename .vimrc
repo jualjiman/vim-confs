@@ -16,8 +16,9 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'mattn/emmet-vim'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,6 +64,11 @@ let NERDTreeIgnore =  ['\.pyc$']
 "YouAutocompleteMe
 let g:ycm_confirm_extra_conf = 0
 "let g:ycm_filetype_whitelist = { 'cpp': 1, 'c': 1, 'python':1  }
+
+" Emmet configurations
+let g:user_emmet_install_global = 0
+autocmd FileType html*,css* EmmetInstall
+let g:user_emmet_leader_key='<C-Z>'
 
 " Shortcuts
 silent! nmap <F2> :NERDTreeToggle<CR>
