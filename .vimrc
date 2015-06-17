@@ -16,7 +16,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-pathogen'
-
+Bundle 'wavded/vim-stylus'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
@@ -37,12 +37,6 @@ set number
 " No wrap
 set nowrap
 
-" set up indentation
-filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
-set expandtab
-
 " avoid navigation keys
 " inoremap  <Up>     <NOP>
 " inoremap  <Down>   <NOP>
@@ -53,14 +47,9 @@ set expandtab
 " noremap   <Left>   <NOP>
 " noremap   <Right>  <NOP>
 
-" Hightlight after line 80
-"execute "set colorcolumn=" . join(range(81,335), ',')
-set colorcolumn=80
-highlight OverLength ctermfg=red guibg=#592929
-match OverLength /\%80v.\+/
-
 " NerdTree confs
 let NERDTreeIgnore =  ['\.pyc$']
+let NERDTreeShowHidden=1
 
 "YouAutocompleteMe
 let g:ycm_confirm_extra_conf = 0
@@ -85,7 +74,6 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_python_checkers = ['flake8']
 execute pathogen#infect()
 
 " Shortcuts
