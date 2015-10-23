@@ -21,10 +21,11 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tomtom/tcomment_vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin on    " required
 
 " CONFIGURATIONS
 
@@ -89,7 +90,10 @@ let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_warning_symbol = '⚠'
 
-let g:syntastic_python_checkers = ['flake8']
+" To install 'pip install flake8' is required
+let g:syntastic_python_checkers = ['flake8', ]
+" To install 'sudo 'npm install -g jslint' is required
+let g:syntastic_javascript_checkers = ['jslint', ]
 
 execute pathogen#infect()
 
