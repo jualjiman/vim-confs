@@ -100,6 +100,9 @@ execute pathogen#infect()
 " Shortcuts
 silent! nmap <F2> :NERDTreeToggle<CR>
 map <F3> :vsp<CR>
+""Toggle comments as a block
+nmap <C-C> :TCommentBlock<CR>
+vmap <C-C> :TCommentBlock<CR>
 
 " Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files
