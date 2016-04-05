@@ -59,8 +59,9 @@ set expandtab
 " noremap   <Right>  <NOP>
 
 " NerdTree confs
-let NERDTreeIgnore =  ['\.pyc$']
+let NERDTreeIgnore=['\.pyc$']
 let NERDTreeShowHidden=1
+let NERDTreeQuitOnOpen=0
 
 "YouAutocompleteMe
 let g:ycm_confirm_extra_conf = 0
@@ -81,7 +82,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " Allow mouse usage
-set mouse=a
+" set mouse=a
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
@@ -103,11 +104,23 @@ execute pathogen#infect()
 " Shortcuts
 silent! nmap <F2> :NERDTreeToggle<CR>
 map <F3> :vsp<CR>
+
 ""Toggle comments as a block
 nmap <C-C> :TCommentBlock<CR>
 vmap <C-C> :TCommentBlock<CR>
 
-" Tell vim to remember certain things when we exit
+"" Auto turn on paste mode, when pasting in insert mode.
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
 "  '10  :  marks will be remembered for up to 10 previously edited files
 "  "100 :  will save up to 100 lines for each register
 "  :20  :  up to 20 lines of command-line history will be remembered
