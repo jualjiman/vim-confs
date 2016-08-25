@@ -31,16 +31,13 @@ filetype plugin on    " required
 
 " Color scheme
 syntax enable
-colorscheme monokai
-" 'sickill/vim-monokai'
+colorscheme stereokai
+" colorscheme monokai
 
 " Line counter
 set number
 " No wrap
 set nowrap
-
-" highlight current row
-set cursorline
 
 " set up indentation
 filetype plugin indent on
@@ -49,7 +46,10 @@ set shiftwidth=4
 set expandtab
 
 " Highlight search matches
-:set hlsearch
+set hlsearch
+
+" Highlight current row
+set cursorline
 
 " avoid navigation keys
 " inoremap  <Up>     <NOP>
@@ -75,10 +75,6 @@ let g:user_emmet_install_global = 0
 autocmd FileType html*,css* EmmetInstall
 let g:user_emmet_leader_key='<C-Z>'
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 " Syntastic confs
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -98,7 +94,8 @@ let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_warning_symbol = '⚠'
 
 " To install 'pip install flake8' is required
-let g:syntastic_python_checkers = ['flake8', ]
+" Python configurations are in ftplugin/python.vim
+
 " To install 'sudo 'npm install -g jslint' is required
 let g:syntastic_javascript_checkers = ['jslint', ]
 
