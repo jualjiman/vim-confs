@@ -48,6 +48,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Highlight search matches
+:set hlsearch
+
 " avoid navigation keys
 " inoremap  <Up>     <NOP>
 " inoremap  <Down>   <NOP>
