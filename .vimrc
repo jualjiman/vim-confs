@@ -12,11 +12,12 @@ call vundle#begin()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'tpope/vim-pathogen'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-pathogen'
 Bundle 'wavded/vim-stylus'
+
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
@@ -99,6 +100,9 @@ let g:syntastic_style_warning_symbol = '⚠'
 " To install 'sudo 'npm install -g jslint' is required
 let g:syntastic_javascript_checkers = ['jslint', ]
 
+""Hightlight matches
+set hlsearch
+
 execute pathogen#infect()
 
 " Shortcuts
@@ -121,6 +125,13 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
+"" Multiple cursor settings
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+" Tell vim to remember certain things when we exit
 "  '10  :  marks will be remembered for up to 10 previously edited files
 "  "100 :  will save up to 100 lines for each register
 "  :20  :  up to 20 lines of command-line history will be remembered
@@ -129,13 +140,13 @@ endfunction
 set viminfo='10,\"100,:20,%,n~/.viminfo
 
 function! ResCur()
-    if line("'\"") <= line("$")
-        normal! g`"
-        return 1
-    endif
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
 endfunction
-
+ 
 augroup resCur
-    autocmd!
-    autocmd BufWinEnter * call ResCur()
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
 augroup END
