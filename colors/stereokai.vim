@@ -25,8 +25,8 @@ highlight Pmenu ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=#444444 gu
 highlight PmenuSel ctermfg=NONE ctermbg=238 cterm=NONE guifg=NONE guibg=#f92672 gui=NONE
 highlight WildMenu ctermfg=NONE ctermbg=53 cterm=NONE guifg=NONE guibg=#f92672 gui=NONE
 highlight IncSearch ctermfg=NONE ctermbg=53 cterm=NONE guifg=NONE guibg=#68233c gui=NONE
-highlight Search ctermfg=253 ctermbg=239 cterm=bold guifg=#000000 guibg=#000000 gui=underline
-highlight Directory ctermfg=141 ctermbg=NONE cterm=NONE guifg=#ae81ff guibg=NONE gui=NONE
+highlight Search ctermfg=DarkYellow ctermbg=Yellow cterm=bold guifg=#000000 guibg=#000000 gui=underline
+highlight Directory ctermfg=141 ctermbg=NONE cterm=NONE guifg=#f3ee25 guibg=NONE gui=NONE
 highlight Folded ctermfg=95 ctermbg=234 cterm=NONE guifg=#75715e guibg=#373736 gui=NONE
 highlight DiffAdd ctermfg=231 ctermbg=64 cterm=NONE guifg=#f8f8f2 guibg=#45820b gui=NONE
 highlight DiffDelete ctermfg=88 ctermbg=NONE cterm=NONE guifg=#8a0707 guibg=NONE gui=NONE

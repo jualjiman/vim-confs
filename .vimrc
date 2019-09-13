@@ -14,15 +14,18 @@ Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-pathogen'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
-Bundle 'wavded/vim-stylus'
+" Bundle 'wavded/vim-stylus'
+" Bundle 'scrooloose/syntastic'
+Bundle 'dense-analysis/ale'
 
 Plugin 'jiangmiao/auto-pairs'
-Plugin 'mattn/emmet-vim'
+" Plugin 'mattn/emmet-vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -42,9 +45,10 @@ set nowrap
 
 " set up indentation
 filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
-set expandtab
+" set list
+" set listchars=tab:›-,space:·
+" highlight SpecialKey ctermfg=237
+" highlight SpecialKey ctermbg=NONE
 
 " Highlight search matches
 set hlsearch
@@ -84,8 +88,9 @@ set statusline+=%*
 " Allow mouse usage
 " set mouse=a
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
+" Syntastic confs
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
@@ -98,7 +103,7 @@ let g:syntastic_style_warning_symbol = '⚠'
 " Python configurations are in ftplugin/python.vim
 
 " To install 'sudo 'npm install -g jslint' is required
-let g:syntastic_javascript_checkers = ['jslint', ]
+" let g:syntastic_javascript_checkers = ['jslint', ]
 
 ""Hightlight matches
 set hlsearch
@@ -108,12 +113,17 @@ execute pathogen#infect()
 " Shortcuts
 silent! nmap <F2> :NERDTreeToggle<CR>
 map <F3> :vsp<CR>
+map <F4> :sp<CR>
 
 ""Toggle comments as a block
 nmap <C-C> :TCommentBlock<CR>
 vmap <C-C> :TCommentBlock<CR>
 
-"" Auto turn on paste mode, when pasting in insert mode.
+"Configuring ctrl p to avoid to clear cache on exit
+let g:ctrlp_clear_cache_on_exit = 0
+
+
+" Auto turn on paste mode, when pasting in insert mode.
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
 
@@ -145,8 +155,14 @@ function! ResCur()
     return 1
   endif
 endfunction
- 
+
 augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+" ALE
+let g:ale_linters = {'python': ['flake8']}
+" pip install black
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['isort', 'black']}
+let g:ale_fix_on_save = 1
