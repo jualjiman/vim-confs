@@ -15,8 +15,6 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-pathogen'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
-" Bundle 'wavded/vim-stylus'
-" Bundle 'scrooloose/syntastic'
 Bundle 'dense-analysis/ale'
 
 Plugin 'jiangmiao/auto-pairs'
@@ -76,9 +74,9 @@ let g:ycm_confirm_extra_conf = 0
 "let g:ycm_filetype_whitelist = { 'cpp': 1, 'c': 1, 'python':1  }
 
 " Emmet configurations
-let g:user_emmet_install_global = 0
-autocmd FileType html*,css* EmmetInstall
-let g:user_emmet_leader_key='<C-Z>'
+" let g:user_emmet_install_global = 0
+" autocmd FileType html*,css* EmmetInstall
+" let g:user_emmet_leader_key='<C-Z>'
 
 " Syntastic confs
 set statusline+=%#warningmsg#
@@ -87,23 +85,6 @@ set statusline+=%*
 
 " Allow mouse usage
 " set mouse=a
-
-" Syntastic confs
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_style_warning_symbol = '⚠'
-
-" To install 'pip install flake8' is required
-" Python configurations are in ftplugin/python.vim
-
-" To install 'sudo 'npm install -g jslint' is required
-" let g:syntastic_javascript_checkers = ['jslint', ]
 
 ""Hightlight matches
 set hlsearch
