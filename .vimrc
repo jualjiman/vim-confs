@@ -16,6 +16,7 @@ Bundle 'tpope/vim-pathogen'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'dense-analysis/ale'
+Plugin 'majutsushi/tagbar'
 
 Plugin 'jiangmiao/auto-pairs'
 " Plugin 'mattn/emmet-vim'
@@ -23,14 +24,14 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
 
+
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin on    " required
+filetype plugin on    	     " required
 
 " CONFIGURATIONS
-
 " Color scheme
 syntax enable
 colorscheme stereokai
@@ -99,6 +100,10 @@ map <F4> :sp<CR>
 ""Toggle comments as a block
 nmap <C-C> :TCommentBlock<CR>
 vmap <C-C> :TCommentBlock<CR>
+
+"" sudo apt-get install ctags
+nmap <F8> :TagbarToggle<CR>
+set tags=tags
 
 "Configuring ctrl p to avoid to clear cache on exit
 let g:ctrlp_clear_cache_on_exit = 0
